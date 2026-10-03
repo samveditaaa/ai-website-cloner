@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server/index.js",
-    "client": "vite --host 0.0.0.0",
+    "client": "cd client && vite --host 0.0.0.0",
     "build": "npm run build:client",
-    "build:client": "vite --config client/vite.config.js --root client build",
+    "build:client": "cd client && vite build",
     "start": "node server/index.js"
   },
   "dependencies": {
