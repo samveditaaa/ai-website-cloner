@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ai-frontend-cloner-agent
+    env: node
+    plan: free
+    buildCommand: npm install && npx playwright install --with-deps chromium && npm run build:client
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5.6-luna
+      - key: CLIENT_ORIGIN
+        value: https://YOUR-RENDER-SERVICE.onrender.com
